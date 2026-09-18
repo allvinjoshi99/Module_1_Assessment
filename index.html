@@ -1,75 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Allvin Joshi - Portfolio</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f8;
-            color: #222;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 40px;
-            text-align: center;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 18px;
-            color: #666;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #24292f;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .button:hover {
-            background: #444;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="container">
-
-        <h1>Welcome to Allvin Joshi's Portfolio</h1>
-
-        <p>
-            This website is hosted using GitHub Pages.
-        </p>
-
-        <p>
-            My custom domain is working successfully!
-        </p>
-
-        <a href="https://github.com/allvinjoshi99" class="button">
-            Visit My GitHub
-        </a>
-
-    </div>
-
-</body>
+<html>
+    <head>
+        <title>EMPLOYEE ATTENDANCE</title>
+    </head>
+    <body>
+        <h1>Attendance Register/Details</h1>
+        <div id="submit">
+            <h2>Attendance Register</h2>
+            <label for="Name" id="Namelabel">Employee Name</label>
+            <input type="text" id="Name">
+            <button id="Present">Present</button>
+            <button id="Absent">Absent</button>
+        </div>
+        <div>
+            <h2>Attendance Details</h2>
+            <table id="details">
+                <tr>
+                    <th>Employee</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </div>
+        <div id="result">
+            <p>Total Present :</p>
+            <p>Total Absent :</p>
+        </div>
+    </body>
 </html>
+
+<style>
+    html{
+        text-align: center;
+        border: 2px solid black;
+    }
+    div{
+        width: 40%;
+        border: 2px solid black;
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        vertical-align: top;
+        margin-left: 30px;
+        font-weight: bolder;
+    }
+    input{
+        display: block;
+        margin-left: 25%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: 50%;
+        text-align: center;
+    }
+    #Present,#Absent{
+        margin: 25px;
+        padding: 10px;
+    }
+    button:hover{
+        border: 2px solid goldenrod;
+        font-weight: bolder;
+    }
+    #details tr th{
+        text-align: left;
+        width: 200px;
+        border: 1px solid black;
+
+    }
+    #details tr td{
+        height: 2px;
+        border: 2px solid black;
+    }
+    #result{
+        margin-top: 10%;
+        text-align: left;
+        padding-left: 1%;
+    }
+</style>
+
+<script>
+    var submit=document.getElementById("submit")
+    var details=document.getElementById("details")
+    var UserName=document.getElementById("Name")
+
+    var result=document.getElementById("result")
+
+    var countPresent=1
+    var countAbsent=1
+    var btnid=1
+    submit.addEventListener('click',(event)=>{
+        var tr=document.createElement("tr")
+        tr.id=btnid
+        if(event.target.id=="Present"){
+            tr.innerHTML=`<td>${UserName.value}</td>`+`<td>Present</td>`+`<td><button id=${btnid}>X</button></td>`
+            details.append(tr)
+            result.firstElementChild.textContent=`Total Present :${countPresent}`
+            countPresent=countPresent+1
+            btnid=btnid+1
+        }
+        else if(event.target.id=="Absent"){
+            tr.innerHTML=`<td>${UserName.value}</td>`+`<td>Absent</td>`+`<td><button id=${btnid}>X</button></td>`
+            details.append(tr)
+            result.lastElementChild.textContent=`Total Present :${countAbsent}`
+            countAbsent=countAbsent+1
+            btnid=btnid+1
+        }
+    })
+    details.addEventListener('click',(event)=>{
+        details.deleteRow(event.target.id)
+        console.log(event.target)
+    })
+
+</script>
