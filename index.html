@@ -1,31 +1,120 @@
-<form>
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="email" id="email" placeholder="Your Email">
-    <textarea id="message" placeholder="Your Message"></textarea>
+<html>
+    <head>
+        <title>Groceries List</title>
+    </head>
+    <body>
+        <h1>List of Products Need to Purchase</h1>
+        <div class="add">
+            <h2>Shopping List</h2>
+            <div>
+                <label for="Product">Product Name</label>
+                <input type="text" id="Product">
+                <label for="Price">Price</label>
+                <input type="text" id="Price">
+                <label for="Quantity">Quantity</label>
+                <input type="text" id="Quantity">
+            </div>
+            <button id="btn">Add To Cart</button>
+        </div>
+        <div class="list">
+            <h2>Added List</h2>
+            <table id="adddata">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
 
-    <button type="button" onclick="sendEmail()">
-        Send Message
-    </button>
-</form>
+<style>
+    body{
+        border: 5px solid lightgray;
+    }
+    h1{
+        text-align: center;
+        padding: 2%;
+    }
+    .add{
+        width: 30%;
+        text-align: left;
+        margin-left: 5%;
+        margin-top: 5%;
+        background-color: lightgoldenrodyellow;
+        display: inline-block;
+        font-weight: bolder;
+        border: 3px solid goldenrod;
+    }
+    label{
+        margin-left: 20px;
+    }
+    input{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+        margin-left: 20px;
+    }
+    .add h2{
+        text-align: center;
+    }
+    .add button{
+        margin-left: 40%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .list{
+        display: inline-block;
+        vertical-align: top;
+        background-color: lightblue;
+        width: 30%;
+        margin-top: 5%;
+        margin-left: 5%;
+        text-align: center;
+        border: 3px solid darkcyan;
+    }
+    .list table{
+        margin: auto;
+        border: 1px solid black;
+
+    }
+    th,td{
+        width: 10%;
+        border: 2px solid white;
+        text-align: center;
+        margin: auto;
+    }
+</style>
 
 <script>
-function sendEmail() {
+    var Product1=document.getElementById("Product")
+    var Price1=document.getElementById("Price")
+    var Quantity1=document.getElementById("Quantity")
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
+    var btn=document.getElementById("btn")
 
-    const subject = encodeURIComponent("Message from my portfolio");
+    var adddata=document.getElementById("adddata")
 
-    const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n\n" +
-        "Message:\n" + message
-    );
+    var id=0
+    btn.addEventListener('click',()=>{
+        
+        var total=Number(Price1.value)*Number(Quantity1.value)
+        var tr=document.createElement("tr")
+        tr.id=id
+        tr.innerHTML=`<td>${Product1.value}</td>`+`<td>${Price1.value}</td>`+`<td>${Quantity1.value}</td>`+`<td>${total}</td>`+`<button id="${id}">X</button>`
+        adddata.append(tr)
+        id=id+1
 
-    window.location.href =
-        "mailto:YOUR_EMAIL@gmail.com" +
-        "?subject=" + subject +
-        "&body=" + body;
-}
+    })
+    adddata.addEventListener('click',(event)=>{
+        console.log(event.target.id)
+        if(event.target.id!=undefined || event.target.id==""){
+            adddata.deleteRow(Number(event.target.id))
+        }
+        
+    })
 </script>
