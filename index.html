@@ -1,120 +1,344 @@
-<html>
-    <head>
-        <title>Groceries List</title>
-    </head>
-    <body>
-        <h1>List of Products Need to Purchase</h1>
-        <div class="add">
-            <h2>Shopping List</h2>
-            <div>
-                <label for="Product">Product Name</label>
-                <input type="text" id="Product">
-                <label for="Price">Price</label>
-                <input type="text" id="Price">
-                <label for="Quantity">Quantity</label>
-                <input type="text" id="Quantity">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Allvin Joshi - Software Developer Portfolio">
+    <title>Allvin Joshi | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#home" class="logo">AJ<span>.</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#case-studies">Case Studies</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content reveal">
+                <p class="eyebrow">SOFTWARE DEVELOPER • DATA • AUTOMATION</p>
+                <h1>Hi, I'm <span>Allvin Joshi.</span></h1>
+                <h2>I build practical software, data and automation solutions.</h2>
+                <p class="hero-text">
+                    Developer focused on Power BI, Power Platform, .NET, SQL and reporting
+                    solutions — with a passion for turning business problems into reliable,
+                    maintainable applications.
+                </p>
+
+                <div class="hero-buttons">
+                    <a class="btn primary" href="#projects">View My Work</a>
+                    <a class="btn secondary" href="#contact">Let's Connect</a>
+                </div>
+
+                <div class="quick-links">
+                    <a href="https://github.com/allvinjoshi99" target="_blank" rel="noopener">GitHub ↗</a>
+                    <span>•</span>
+                    <a href="#" id="linkedinLink">LinkedIn ↗</a>
+                    <span>•</span>
+                    <a href="mailto:YOUR_EMAIL@example.com">Email ↗</a>
+                </div>
             </div>
-            <button id="btn">Add To Cart</button>
-        </div>
-        <div class="list">
-            <h2>Added List</h2>
-            <table id="adddata">
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th></th>
-                </tr>
-            </table>
-        </div>
-    </body>
+
+            <div class="hero-card reveal">
+                <div class="terminal">
+                    <div class="terminal-top">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="purple">const</span> developer = {</p>
+                        <p>&nbsp;&nbsp;name: <span class="green">"Allvin Joshi"</span>,</p>
+                        <p>&nbsp;&nbsp;focus: [</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Power BI"</span>,</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Power Platform"</span>,</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">".NET"</span>,</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"SQL"</span></p>
+                        <p>&nbsp;&nbsp;],</p>
+                        <p>&nbsp;&nbsp;mindset: <span class="green">"Build. Learn. Improve."</span></p>
+                        <p>};</p>
+                        <p class="cursor">_</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats section reveal">
+            <div><strong>5+</strong><span>Core Technologies</span></div>
+            <div><strong>3+</strong><span>Years Experience</span></div>
+            <div><strong>2024</strong><span>Best Employee Award</span></div>
+            <div><strong>∞</strong><span>Learning Mindset</span></div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="section-heading reveal">
+                <p class="eyebrow">01 / ABOUT</p>
+                <h2>More than a list of skills.</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm a software developer who works across business intelligence,
+                        automation, reporting and application development.
+                    </p>
+                    <p>
+                        I enjoy understanding the problem behind a requirement, designing
+                        a clean technical solution, and making it reliable enough for real
+                        business use.
+                    </p>
+                    <p>
+                        This portfolio is also a living project — I'll keep adding experiments,
+                        case studies and applications as I learn new technologies.
+                    </p>
+                </div>
+
+                <div class="about-panel reveal">
+                    <div class="mini-card">
+                        <span class="mini-icon">⚡</span>
+                        <div>
+                            <h3>Build</h3>
+                            <p>Business applications and automation</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-icon">◈</span>
+                        <div>
+                            <h3>Analyze</h3>
+                            <p>Data models, dashboards and reporting</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <span class="mini-icon">⌘</span>
+                        <div>
+                            <h3>Improve</h3>
+                            <p>Performance, maintainability and UX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="section-heading reveal">
+                <p class="eyebrow">02 / FEATURED PROJECTS</p>
+                <h2>Things I've built.</h2>
+                <p>Replace these sample projects with your real work and demos.</p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <div class="project-number">01</div>
+                    <span class="tag">Power BI</span>
+                    <h3>Business Analytics Dashboard</h3>
+                    <p>
+                        Interactive analytics solution with data modelling, DAX measures,
+                        KPIs and business-focused visualizations.
+                    </p>
+                    <div class="tech-list"><span>DAX</span><span>SQL</span><span>Power BI</span></div>
+                    <a href="#" class="project-link">View project →</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-number">02</div>
+                    <span class="tag">Automation</span>
+                    <h3>Employee Workflow Automation</h3>
+                    <p>
+                        Automated request, approval and notification workflow connecting
+                        business users with Microsoft 365 services.
+                    </p>
+                    <div class="tech-list"><span>Power Apps</span><span>Power Automate</span><span>Teams</span></div>
+                    <a href="#" class="project-link">View project →</a>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-number">03</div>
+                    <span class="tag">.NET / Reporting</span>
+                    <h3>Reporting Modernization</h3>
+                    <p>
+                        Modern reporting experience built around a legacy reporting migration,
+                        data mapping and application integration.
+                    </p>
+                    <div class="tech-list"><span>C#</span><span>.NET</span><span>DevExpress</span></div>
+                    <a href="#" class="project-link">View project →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section dark-section" id="case-studies">
+            <div class="section-heading reveal">
+                <p class="eyebrow">03 / CASE STUDIES</p>
+                <h2>How I solve technical problems.</h2>
+            </div>
+
+            <div class="case-list">
+                <article class="case-item reveal">
+                    <div class="case-meta">CASE 01</div>
+                    <div>
+                        <h3>SSAS Performance & Partitioning</h3>
+                        <p>
+                            Designing partition strategies for large datasets, improving
+                            processing organization and making refresh operations easier to manage.
+                        </p>
+                        <div class="case-flow">
+                            <span>Large Dataset</span><b>→</b><span>Partition Strategy</span><b>→</b><span>Incremental Processing</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-item reveal">
+                    <div class="case-meta">CASE 02</div>
+                    <div>
+                        <h3>Crystal Reports → DevExpress</h3>
+                        <p>
+                            Recreating an existing reporting experience in a modern reporting
+                            framework while preserving application data and parameter behaviour.
+                        </p>
+                        <div class="case-flow">
+                            <span>Legacy Report</span><b>→</b><span>ViewModel Mapping</span><b>→</b><span>Modern Viewer</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-item reveal">
+                    <div class="case-meta">CASE 03</div>
+                    <div>
+                        <h3>Power BI API Integration</h3>
+                        <p>
+                            Connecting automation and application workflows with Power BI APIs
+                            to trigger refreshes and track processing status.
+                        </p>
+                        <div class="case-flow">
+                            <span>Automation</span><b>→</b><span>API</span><b>→</b><span>Refresh Status</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="section-heading reveal">
+                <p class="eyebrow">04 / SKILLS</p>
+                <h2>My technical toolkit.</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-group reveal">
+                    <h3>Data & BI</h3>
+                    <div class="skill-pills">
+                        <span>Power BI</span><span>SSAS</span><span>SSRS</span><span>DAX</span><span>T-SQL</span><span>Oracle</span>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <h3>Microsoft Platform</h3>
+                    <div class="skill-pills">
+                        <span>Power Apps</span><span>Power Automate</span><span>Power Pages</span><span>Microsoft Graph</span><span>Azure DevOps</span>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <h3>Development</h3>
+                    <div class="skill-pills">
+                        <span>C#</span><span>.NET</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-group reveal">
+                    <h3>Reporting & Tools</h3>
+                    <div class="skill-pills">
+                        <span>DevExpress</span><span>Crystal Reports</span><span>Git</span><span>REST APIs</span><span>SQL Server</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section playground" id="playground">
+            <div class="section-heading reveal">
+                <p class="eyebrow">05 / CODING PLAYGROUND</p>
+                <h2>A little proof of code.</h2>
+                <p>Try the JavaScript sorting demo.</p>
+            </div>
+
+            <div class="playground-box reveal">
+                <div class="playground-input">
+                    <label for="arrayInput">Enter numbers separated by commas</label>
+                    <input id="arrayInput" value="5, 2, 8, 1, 9, 3">
+                    <div class="algorithm-buttons">
+                        <button class="small-btn" data-algo="bubble">Bubble Sort</button>
+                        <button class="small-btn" data-algo="selection">Selection Sort</button>
+                    </div>
+                </div>
+                <div class="playground-output">
+                    <span>OUTPUT</span>
+                    <pre id="codeOutput">Click an algorithm to run it...</pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="section achievement">
+            <div class="award reveal">
+                <div class="award-icon">🏆</div>
+                <div>
+                    <p class="eyebrow">ACHIEVEMENT</p>
+                    <h2>Best Employee Award — 2024</h2>
+                    <p>Recognized for contribution and performance. Add your exact achievement details here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact">
+            <div class="section-heading reveal">
+                <p class="eyebrow">06 / CONTACT</p>
+                <h2>Let's build something.</h2>
+                <p>For now, this static site can open an email client. Later, connect this form to your own API.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-copy reveal">
+                    <h3>Have an opportunity or an interesting problem?</h3>
+                    <p>Send me a message and let's connect.</p>
+                    <a href="mailto:YOUR_EMAIL@example.com" class="email-link">YOUR_EMAIL@example.com</a>
+                </div>
+
+                <form class="contact-form reveal" id="contactForm">
+                    <label>
+                        Name
+                        <input type="text" id="name" required placeholder="Your name">
+                    </label>
+
+                    <label>
+                        Email
+                        <input type="email" id="email" required placeholder="you@example.com">
+                    </label>
+
+                    <label>
+                        Message
+                        <textarea id="message" rows="6" required placeholder="Tell me about the opportunity..."></textarea>
+                    </label>
+
+                    <button type="submit" class="btn primary">Send Message ↗</button>
+                    <p class="form-note">This version uses your email client; no backend is required.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Allvin Joshi. Built with HTML, CSS & JavaScript.</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
-
-<style>
-    body{
-        border: 5px solid lightgray;
-    }
-    h1{
-        text-align: center;
-        padding: 2%;
-    }
-    .add{
-        width: 30%;
-        text-align: left;
-        margin-left: 5%;
-        margin-top: 5%;
-        background-color: lightgoldenrodyellow;
-        display: inline-block;
-        font-weight: bolder;
-        border: 3px solid goldenrod;
-    }
-    label{
-        margin-left: 20px;
-    }
-    input{
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 5px;
-        margin-left: 20px;
-    }
-    .add h2{
-        text-align: center;
-    }
-    .add button{
-        margin-left: 40%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    .list{
-        display: inline-block;
-        vertical-align: top;
-        background-color: lightblue;
-        width: 30%;
-        margin-top: 5%;
-        margin-left: 5%;
-        text-align: center;
-        border: 3px solid darkcyan;
-    }
-    .list table{
-        margin: auto;
-        border: 1px solid black;
-
-    }
-    th,td{
-        width: 10%;
-        border: 2px solid white;
-        text-align: center;
-        margin: auto;
-    }
-</style>
-
-<script>
-    var Product1=document.getElementById("Product")
-    var Price1=document.getElementById("Price")
-    var Quantity1=document.getElementById("Quantity")
-
-    var btn=document.getElementById("btn")
-
-    var adddata=document.getElementById("adddata")
-
-    var id=0
-    btn.addEventListener('click',()=>{
-        
-        var total=Number(Price1.value)*Number(Quantity1.value)
-        var tr=document.createElement("tr")
-        tr.id=id
-        tr.innerHTML=`<td>${Product1.value}</td>`+`<td>${Price1.value}</td>`+`<td>${Quantity1.value}</td>`+`<td>${total}</td>`+`<button id="${id}">X</button>`
-        adddata.append(tr)
-        id=id+1
-
-    })
-    adddata.addEventListener('click',(event)=>{
-        console.log(event.target.id)
-        if(event.target.id!=undefined || event.target.id==""){
-            adddata.deleteRow(Number(event.target.id))
-        }
-        
-    })
-</script>
